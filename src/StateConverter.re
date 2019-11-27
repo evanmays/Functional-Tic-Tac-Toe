@@ -2,15 +2,15 @@ open State;
 let overwriteBox =
     (state: state, ~player: player, ~box: UserInput.keyboardInput) => {
   switch (box) {
-  | UserInput.TopLeft => {...state, topLeft: Some(player)}
-  | UserInput.TopMiddle => {...state, topMiddle: Some(player)}
-  | UserInput.TopRight => {...state, topRight: Some(player)}
-  | UserInput.MiddleLeft => {...state, middleLeft: Some(player)}
-  | UserInput.MiddleMiddle => {...state, middleMiddle: Some(player)}
-  | UserInput.MiddleRight => {...state, middleRight: Some(player)}
-  | UserInput.BottomLeft => {...state, bottomLeft: Some(player)}
-  | UserInput.BottomMiddle => {...state, bottomMiddle: Some(player)}
-  | UserInput.BottomRight => {...state, bottomRight: Some(player)}
+  | UserInput.TopLeft => {...state, topLeft: State.Some(player)}
+  | UserInput.TopMiddle => {...state, topMiddle: State.Some(player)}
+  | UserInput.TopRight => {...state, topRight: State.Some(player)}
+  | UserInput.MiddleLeft => {...state, middleLeft: State.Some(player)}
+  | UserInput.MiddleMiddle => {...state, middleMiddle: State.Some(player)}
+  | UserInput.MiddleRight => {...state, middleRight: State.Some(player)}
+  | UserInput.BottomLeft => {...state, bottomLeft: State.Some(player)}
+  | UserInput.BottomMiddle => {...state, bottomMiddle: State.Some(player)}
+  | UserInput.BottomRight => {...state, bottomRight: State.Some(player)}
   };
 };
 

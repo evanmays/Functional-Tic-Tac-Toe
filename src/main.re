@@ -22,7 +22,7 @@ let state: ref(State.state) = ref(startState);
 
 /* Main game loop */
 
-let runOnce = (inputString: string) =>
+let processPlayerMove = (inputString: string) =>
   if (UserInput.isValidInputString(inputString)) {
     let input = UserInput.gatherInput(inputString);
     let validInput = StateValidator.isValidInput(input, state^);
@@ -49,9 +49,13 @@ let runOnce = (inputString: string) =>
     Js.log("That move is not on the grid");
   };
 
-Js.log("Welcome to Functional Tic Tac Toe");
-Js.log(
-  "When it is your turn, please enter the position you would like to mark.",
-);
-Js.log("Please go player " ++ State.playerToString(state^.currentTurn));
-Readline.readline(input => runOnce(input));
+let main = () => {
+  Js.log("Welcome to Functional Tic Tac Toe");
+  Js.log(
+    "When it is your turn, please enter the position you would like to mark.",
+  );
+  Js.log("Please go player " ++ State.playerToString(state^.currentTurn));
+  Readline.readline(input => processPlayerMove(input));
+};
+
+main();

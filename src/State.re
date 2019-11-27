@@ -34,25 +34,25 @@ let optionalPlayerToString = (player: option(player)) => {
   };
 };
 
-let addGridToRow = boxes => {
-  Array.fold_left((a, b) => a ++ "|" ++ b, "", boxes) ++ "|";
+let boardRowAsString = boardRow => {
+  Array.fold_left((a, b) => a ++ "|" ++ b, "", boardRow) ++ "|";
 };
 
 let stateAsString = state => {
   let row1 =
-    addGridToRow([|
+    boardRowAsString([|
       optionalPlayerToString(state.topLeft),
       optionalPlayerToString(state.topMiddle),
       optionalPlayerToString(state.topRight),
     |]);
   let row2 =
-    addGridToRow([|
+    boardRowAsString([|
       optionalPlayerToString(state.middleLeft),
       optionalPlayerToString(state.middleMiddle),
       optionalPlayerToString(state.middleRight),
     |]);
   let row3 =
-    addGridToRow([|
+    boardRowAsString([|
       optionalPlayerToString(state.bottomLeft),
       optionalPlayerToString(state.bottomMiddle),
       optionalPlayerToString(state.bottomRight),
