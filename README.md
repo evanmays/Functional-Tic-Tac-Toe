@@ -1,18 +1,15 @@
-# Basic Reason Template
+# Project Description
 
-Hello! This project allows you to quickly get started with Reason and BuckleScript. If you wanted a more sophisticated version, try the `react` template (`bsb -theme react -init .`).
+Learning Reason and Functional Programming, by reimplementing Tic Tac Toe.
 
 # Build
-```
-npm run build
-```
+
+    npm run build
 
 # Build + Watch
 
-```
-npm run start
-```
+    npm run start
 
+# Play
 
-# Editor
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically
+    node src/main.bs.js
