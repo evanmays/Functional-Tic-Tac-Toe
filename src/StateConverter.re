@@ -1,5 +1,4 @@
-include State;
-
+open State;
 let overwriteBox =
     (state: state, ~player: player, ~box: UserInput.keyboardInput) => {
   switch (box) {
